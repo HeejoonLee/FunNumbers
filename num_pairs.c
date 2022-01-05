@@ -69,8 +69,31 @@ int is_amicable(unsigned long a, unsigned long b)
 
 int is_betrothed(unsigned long a, unsigned long b)
 {
-    // TODO
-    return 0;
+    // Betrothed numbers: Two differnet natural numbers such that the 
+    // sum of the proper divisors of each is equal to the other number + 1
+    if (a == b) {
+        return 0;
+    }
+    
+    unsigned long i, sum_a, sum_b;
+    sum_a = 0;
+    sum_b = 0;
+    for (i = 1; i < a; i++) {
+        if ((a % i) == 0) {
+            sum_a += i;
+        }
+    }
+    for (i = 1; i < b; i++) {
+        if ((b % i) == 0) {
+            sum_b += i;
+        }
+    }
+
+    if ((sum_a == b + 1) && (sum_b == a + 1)) {
+        return 1;
+    } else {
+        return 0;
+    }
 }
 
 int is_sociable(unsigned long a, unsigned long b)

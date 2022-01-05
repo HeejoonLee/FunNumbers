@@ -12,13 +12,13 @@ int main(int argc, char *argv[])
     unsigned long max;
     max = strtoul(argv[1], NULL, 10);
 
-    printf("Searching for all amicable pairs up to %lu\n", max);
+    printf("Searching for all betrothed pairs up to %lu\n", max);
 
     unsigned long i, j, count;
     count = 0;
     for (i = 1; i <= max; i++) {
         for (j = 1; j <= i; j++) {
-            if (is_amicable(i, j)) {
+            if (is_betrothed(i, j)) {
                 printf("(%lu, %lu)\n", i, j);
                 count += 1;
             }
